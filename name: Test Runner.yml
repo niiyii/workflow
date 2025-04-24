@@ -1,5 +1,5 @@
 name: Test Runner
-on: [workflow_dispatch]  # Manual trigger
+on: [push]  # runs every push
 jobs:
   test:
     runs-on: self-hosted
