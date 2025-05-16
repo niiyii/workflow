@@ -1,3 +1,3 @@
-FROM ubuntu-slim
+FROM ubuntu
 
 CMD ["sleep","infinity"]
