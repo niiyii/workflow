@@ -30,13 +30,12 @@ jobs:
           docker buildx build \
             --cache-from type=local,src=/tmp/.buildx-cache \
             --cache-to type=local,dest=/tmp/.buildx-cache-new \
-            -t ghcr.io/${{ anderman.niiyii }}/Simple-DevOps-Project:latest .
+            -t ghcr.io/${{ secrets.GIT_USERNAME }}/Simple-DevOps-Project:latest .
 
-      - name: Build and Push Docker Image
+      - name: Push Docker Image
         run: |
           set -e
-          docker build -t ghcr.io/${{ anderman.niiyii }}/my-repo:latest .
-          docker push ghcr.io/${{ anderman.niiyii }}/Simple-DevOps-Project:latest
+          docker push ghcr.io/${{ secrets.GIT_SECRET }}/Simple-DevOps-Project:latest
 
       - name: Test Docker image
         run: |
