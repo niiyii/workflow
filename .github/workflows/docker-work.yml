@@ -14,8 +14,8 @@ jobs:
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
-          username: ${{ niiyii }}
-          password: ${{ anderman }}
+          username: ${{ secrets.GIT_USERNAME }}
+          password: ${{ secrets.GIT_SECRET }}
          
       - name: Cache Docker layers
         uses: actions/cache@v3
