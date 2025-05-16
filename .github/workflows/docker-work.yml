@@ -28,14 +28,14 @@ jobs:
         run: |
           set -e
           docker buildx build \
-            -t ghcr.io/${{ secrets.GIT_USERNAME }}/Simple-DevOps-Project:latest .
+            -t ghcr.io/${{ secrets.GIT_USERNAME }}/devops:latest .
 
       - name: Push Docker Image
         run: |
           set -e
-          docker push ghcr.io/${{ secrets.GIT_SECRET }}/Simple-DevOps-Project:latest
+          docker push ghcr.io/${{ secrets.GIT_SECRET }}/devops:latest
 
       - name: Test Docker image
         run: |
           set -e
-          docker run --rm ghcr.io/${{ secrets.GIT_USERNAME }}/Simple-DevOps-Project:latest curl --version
+          docker run --rm ghcr.io/${{ secrets.GIT_USERNAME }}/devops:latest curl --version
