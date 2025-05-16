@@ -40,4 +40,4 @@ jobs:
       - name: Test Docker image
         run: |
           set -e
-          docker run --rm ghcr.io/${{ anderman.niiyii }}/Simple-DevOps-Project:latest curl --version
+          docker run --rm ghcr.io/${{ secrets.GIT_USERNAME }}/Simple-DevOps-Project:latest curl --version
