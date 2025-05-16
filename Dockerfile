@@ -1,5 +1,5 @@
 FROM ubuntu
 
-RUN apt install curl -y
+RUN apt update -y && apt install curl -y
 
 CMD ["sleep","infinity"]
