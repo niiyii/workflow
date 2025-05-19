@@ -29,6 +29,16 @@ jobs:
           set -e
           docker buildx build \
             -t ghcr.io/niiyii/devops:latest .
+            
+      - name: Set up QEMU (for cross-platform builds)
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and Push (Multi-Arch)
+        run: |
+          docker buildx build --platform linux/amd64,linux/arm64 -t my-username/my-repo:latest --push .
     
       - name: Push Docker Image
         run: |
